@@ -1,4 +1,5 @@
 <?php
+include('errors.php');
 	class conexion{
 		private $host;
 		private $user;
@@ -8,10 +9,10 @@
 		private $_instance;
 
 		public function __construct(){
-			$this -> host = 'localhost';
-			$this -> user = 'Pirotecnia';
-			$this -> pass = 'lahormiga';
-			$this -> db = 'inventario';
+			$this -> host = 'mysql.hostinger.es';
+			$this -> user = 'u874438736_pirot';
+			$this -> pass = 'leonardo.130';
+			$this -> db = 'u874438736_hormi';
 			$this -> conectar();
 		}
 

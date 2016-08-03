@@ -1,3 +1,4 @@
+<?php include('../php/errors.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,8 +31,8 @@
 						<a href="#"><span class = "icon-calendar"></span>Inventario <span class="caret icon-circle-down"></span></a>
 						<ul class="children">
 							<li><a href="new.php"><span class='icon-plus'></span>Nuevo Producto</a></li>
-							<li><a href="#"><span class='icon-minus'></span>Eliminar Producto</a></li>
-							<li><a href="#"><span class='icon-pencil'></span>Modificar Producto</a></li>
+							<li><a href="eliminar.php"><span class='icon-minus'></span>Eliminar Producto</a></li>
+							<li><a href="modificar.php"><span class='icon-pencil'></span>Modificar Producto</a></li>
 						</ul>
 					</li>
 

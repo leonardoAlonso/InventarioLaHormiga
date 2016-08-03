@@ -1,6 +1,7 @@
 <?php
 // Includes Login Script
 include('../php/log.php');
+include('../php/errors.php');
 session_start();
 if(isset($_SESSION['loggedin'])){
 	header("location: ../html/inicio.php");

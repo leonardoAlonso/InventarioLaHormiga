@@ -24,36 +24,22 @@ if (isset($consultaBusqueda)) {
 
 	//Si no existe ninguna fila que sea igual a $consultaBusqueda, entonces mostramos el siguiente mensaje
 	if ($filas === 0) {
-		$mensaje = "<p>No hay productos con ese nombre</p>";
+		$mensaje = "<p class='wrapper'>No hay productos con ese nombre</p>";
 	} else {
 		//Si existe alguna fila que sea igual a $consultaBusqueda, entonces mostramos el siguiente mensaje
     $mensaje .= "
-    <table>
-    <thead>
-    <tr>
-    <th>NOMBRE</th>
-    <th>STOCK</th>
-    <th>GANANCIAS</th>
-    <th>PRECIO PUBLICO</th>
-    <th>PRECIO PROVEEDOR</th>
-    </tr>
-    </thead>
-    <tbody>";
+    <form action='../php/delete.php' class='wrapper' method='POST'>";
 		//La variable $resultado contiene el array que se genera en la consulta, así que obtenemos los datos y los mostramos en un bucle
 		while($row = mysql_fetch_row($res)) {
 		    //Output
         $mensaje .="
-        <tr>
-        <td data-label='nombre'>$row[1]</td>
-        <td data-label='stock'>$row[2]</td>
-        <td data-label='ganancias'>$row[3]</td>
-        <td data-label='precio_publico'>$row[4]</td>
-        <td data-label='precio_proveedor'>$row[5]</td>
-        </tr>";
+        Nombre: <input name='nombre' class='find' type = 'text' value='$row[1]'/>
+        <br>
+        <button type = 'submit' name='btn_delete' id = 'btn_delete' class='buscar'><span class='icon-cross'></span> </button>
+        <br/>";
 		};//Fin while $resultados
     $mensaje.="
-    </tbody>
-    </table>";
+    </form>";
 	}; //Fin else $filas
 
 };//Fin isset $consultaBusqueda

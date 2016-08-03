@@ -24,36 +24,32 @@ if (isset($consultaBusqueda)) {
 
 	//Si no existe ninguna fila que sea igual a $consultaBusqueda, entonces mostramos el siguiente mensaje
 	if ($filas === 0) {
-		$mensaje = "<p>No hay productos con ese nombre</p>";
+		$mensaje = "<p class='wrapper'>No hay productos con ese nombre</p>";
 	} else {
 		//Si existe alguna fila que sea igual a $consultaBusqueda, entonces mostramos el siguiente mensaje
     $mensaje .= "
-    <table>
-    <thead>
-    <tr>
-    <th>NOMBRE</th>
-    <th>STOCK</th>
-    <th>GANANCIAS</th>
-    <th>PRECIO PUBLICO</th>
-    <th>PRECIO PROVEEDOR</th>
-    </tr>
-    </thead>
-    <tbody>";
+    <form action='../php/update.php' class='wrapper' method='POST'>";
 		//La variable $resultado contiene el array que se genera en la consulta, así que obtenemos los datos y los mostramos en un bucle
 		while($row = mysql_fetch_row($res)) {
 		    //Output
         $mensaje .="
-        <tr>
-        <td data-label='nombre'>$row[1]</td>
-        <td data-label='stock'>$row[2]</td>
-        <td data-label='ganancias'>$row[3]</td>
-        <td data-label='precio_publico'>$row[4]</td>
-        <td data-label='precio_proveedor'>$row[5]</td>
-        </tr>";
+        Nombre: <input name='nombre' class='find' type = 'text' value='$row[1]'/>
+        <br>
+        Stock: <input name='stock' class='find' type = 'text' value='$row[2]'/>
+        <br>
+        Entradas: <input name='entradas' onkeypress='return soloNumeros(event);' class='find' value='0' type = 'text'/>
+        <br>
+        Salidas: <input name='salidas' onkeypress='return soloNumeros(event);' class='find' value='0' type = 'text'/>
+        <br>
+        Precio Publico: <input name='precio_pubilco' class='find' type = 'text' value='$row[4]'/>
+        <br>
+        Precio Proveedor: <input name='precio_proveedor' class='find' type = 'text' value='$row[5]'/>
+        <br>
+        <button type = 'submit' name='btn_mod' id = 'btn_mod' class='buscar'>Modificar</button>
+        <br/>";
 		};//Fin while $resultados
     $mensaje.="
-    </tbody>
-    </table>";
+    </form>";
 	}; //Fin else $filas
 
 };//Fin isset $consultaBusqueda

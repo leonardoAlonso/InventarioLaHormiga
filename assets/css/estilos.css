@@ -4,6 +4,7 @@
   -webkit-box-sizing:border-box;
   -moz-box-sizing:border-box;
   box-sizing: border-box;
+  font-family:'Archivo Narrow',sans-serif; ;
 }
 
 body{background: #FEFEFE;}
@@ -168,18 +169,18 @@ input{
  -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1) inset;
  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1) inset;
  font-family:'PT Sans', Helvetica, Arial, sans-serif;
-   font-size: 14px;
-   color: #000;
-   text-shadow: 0 1px 2px rgba(0,0,0,.1);
-   -o-transition: all .2s;
-   -moz-transition: all .2s;
-   -webkit-transition: all .2s;
-   -ms-transition: all .2s;
+ font-size: 14px;
+ color: #000;
+ text-shadow: 0 1px 2px rgba(0,0,0,.1);
+ -o-transition: all .2s;
+ -moz-transition: all .2s;
+ -webkit-transition: all .2s;
+ -ms-transition: all .2s;
 }
 
 input:-moz-placeholder { color: #000; }
 input:-ms-input-placeholder { color: #000; }
-input::-webkit-input-placeholder { color: #000; }
+input:-webkit-input-placeholder { color: #000; }
 
 .find{
   overflow: hidden;
@@ -201,8 +202,10 @@ input::-webkit-input-placeholder { color: #000; }
   font-size: 14px;
   color: #000;
   text-shadow: 0 1px 2px rgba(0,0,0,.1);
-  position: relative;
 }
+.find:-moz-placeholder { color: #000; }
+.find:-ms-input-placeholder { color: #000; }
+.find:-webkit-input-placeholder { color: #000; }
 .buscar{
   cursor:pointer;
   width:60px;

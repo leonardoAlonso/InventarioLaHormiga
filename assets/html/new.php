@@ -1,4 +1,6 @@
-<?php include('header.php') ?>
+<?php include('header.php');
+  include('../php/errors.php');
+?>
   <body>
     <h2>Nuevo Producto</h2>
     <form class="wrapper" action="../php/add.php" method="post">
@@ -10,7 +12,7 @@
       <br>
       <input title ="Se necesita el precio" id='precio_proveedor' type="text" name="precio_proveedor" placeholder="Precio Proveedor" required onkeypress="return soloNumeros(event);"/>
       <br>
-      <button class="new" type="submit" name="submit">Agregar</button>
+      <button name='submit' calass='new' type='submit'>Agregar</button>
     </form>
   </body>
 </html>

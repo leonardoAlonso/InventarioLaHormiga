@@ -1,5 +1,6 @@
 <?php include('header.php');
 			include('../php/dao.php');
+			include('../php/errors.php');
 ?>
 <?php
 	session_start();
